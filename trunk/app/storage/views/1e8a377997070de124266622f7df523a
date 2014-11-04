@@ -1,0 +1,54 @@
+<?php $__env->startSection('title','Modify Video'); ?>
+<?php $__env->startSection('content'); ?>
+	<div class="col-lg-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				Form Modify
+			</div>
+			<!-- /.panel-heading -->
+			<div class="panel-body">
+				<?php echo Form::model($video, array('url' => URL::route('video.modify', array('id' => $id)), 'method' => 'post', 'role' => 'form', 'class' => 'form-horizontal')); ?>
+					<input type="hidden" name="id" value="<?php echo $id; ?>">
+
+					<div class="form-group">
+						<?php echo Form::label('url', 'Url', array('class' => 'col-md-2 col-xs-12 control-label')); ?>
+						<div class="col-md-4 col-xs-12">
+							<div class="input-group">
+								<?php echo Form::text('url', null, array('id' => 'video', 'class' => 'form-control', 'placeholder' => 'Url')); ?>
+								<span class="input-group-btn">
+									<a class="btn btn-success browse-video"><i class="glyphicon glyphicon-zoom-in"></i> Browse</a>
+								</span>
+							</div>
+							<span class="error"><?php echo @$error_messages['image'][0]; ?></span>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<?php echo Form::label('title', 'Title', array('class' => 'col-md-2 col-xs-12 control-label')); ?>
+						<div class="col-md-4 col-xs-12">
+							<?php echo Form::text('title', null, array('class' => 'form-control', 'placeholder' => 'Title')); ?>
+							<span class="error"><?php echo @$error_messages['title'][0]; ?></span>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<?php echo Form::label('description', 'Description', array('class' => 'col-md-2 col-xs-12 control-label')); ?>
+						<div class="col-md-10 col-xs-12">
+							<?php echo Form::textarea('description', null, array('class' => 'form-control', 'placeholder' => 'Description')); ?>
+							<span class="error"><?php echo @$error_messages['description'][0]; ?></span>
+						</div>
+					</div>
+
+					<div  class="form-group">
+						<div class="col-sm-2"></div>
+						<div class="col-sm-10">
+							<?php echo Form::submit('Submit', array('name' => 'ok', 'class' => 'btn btn-danger')); ?>
+						</div>
+					</div>
+				<?php echo Form::close(); ?>
+			</div>
+		</div>
+	</div>
+<?php echo View::make('admin::partials.file-modal', array('type' => '3', 'id' => 'video')); ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin::layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

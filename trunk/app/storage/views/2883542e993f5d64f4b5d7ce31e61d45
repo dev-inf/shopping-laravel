@@ -1,0 +1,23 @@
+<?php if (!empty($data)): ?>
+<div class="row">	
+	<div class="page-header">
+		<h1><?php echo $mainTitle; ?> <small><?php echo $subTitle; ?></small></h1>
+	</div>
+	<div class="posterList">
+		<?php foreach ($data as $item): ?>
+			<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 portfolioItem video" id="<?php echo $item['idYoutube']; ?>" data-title="<?php echo $item['title']; ?>" data-toggle="modal" data-target="#myModalTrailer">
+				<a href="./#<?php echo $item['idYoutube']; ?>" class="thumbnail">
+					<img class="lazy img-responsive" data-original="http://i1.ytimg.com/vi/<?php echo $item['idYoutube']; ?>/mqdefault.jpg" alt="<?php echo $item['title']; ?>">
+					<noscript><img src="http://i1.ytimg.com/vi/<?php echo $item['idYoutube']; ?>/mqdefault.jpg"></noscript>
+					<div class="thumbnailHover">
+						<div class="glyphicon glyphicon-play"></div>
+						<div class="item-title">
+							<p><?php echo $item['title']; ?></p>
+						</div>
+					</div>
+				</a>
+			</div>
+		<?php endforeach; ?>
+	</div>
+</div>
+<?php endif; ?>

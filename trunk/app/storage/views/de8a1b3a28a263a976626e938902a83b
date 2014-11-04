@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Laravel 4 - Admin</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Le styles -->
+		<link href="<?php echo asset('/public/libraries/bootstrap/css/bootstrap.css'); ?>" media="screen" rel="stylesheet" type="text/css">
+		<link href="<?php echo asset('/public/styles/admin.css'); ?>" media="screen" rel="stylesheet" type="text/css">
+	</head>
+<body>
+	<div role="navigation" class="navbar navbar-fixed-top navbar-inverse">
+		<?php echo $__env->make('admin::partials.navbar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	</div>
+	<div class="container">
+		<div class="row navigation-container">
+			<?php echo $__env->make('admin::partials.menu', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+		</div>
+		<div class="row breadcrumbs-container">
+			<?php echo Breadcrumbs::renderIfExists(); ?>
+		</div>
+		<div class="row content-container">
+			<?php echo $__env->yieldContent('content'); ?>
+		</div>
+	</div>
+</body>
+<!--[if lt IE 9]><script type="text/javascript" src="http://odcvoyage.com/js/html5.js"></script><![endif]-->
+<script type="text/javascript" src="<?php echo asset('/public/libraries/jquery/jquery-2.0.3.min.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo asset('/public/libraries/bootstrap/js/bootstrap.min.js'); ?>"></script>
+<script type="text/javascript">
+  var $app = {
+      'module': "<?php echo $currentMvc['module']; ?>",
+      'controller': "<?php echo $currentMvc['controller']; ?>",
+      'action': "<?php echo $currentMvc['action']; ?>"
+  };
+	var base_url = '<?php echo Request::root(); ?>';
+</script>
+<script type="text/javascript" data-main="<?php echo asset('/public/libraries/admin/main-backbone'); ?>" src="<?php echo asset('/public/libraries/require.js?v=' . time()); ?>"></script>
+</html>

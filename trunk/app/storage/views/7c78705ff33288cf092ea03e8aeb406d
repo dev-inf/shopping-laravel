@@ -1,0 +1,7 @@
+<ul>
+	<?php if ($data): ?>
+		<?php foreach ($data as $item): ?>
+			<li><a href="<?php echo URL::route('catalogue', array('id' => $item['id'], 'url' => $item['cata_url'])); ?>"><?php echo $item['cata_name']; ?></a></li>
+		<?php endforeach; ?>
+	<?php endif; ?>
+</ul>

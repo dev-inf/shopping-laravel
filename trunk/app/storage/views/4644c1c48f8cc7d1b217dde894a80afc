@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Laravel 4 - Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Le styles -->
+		<link href="<?php echo asset('/public/libraries/bootstrap/css/bootstrap.css'); ?>" media="screen" rel="stylesheet" type="text/css">
+		<link href="<?php echo asset('/public/styles/admin.css'); ?>" media="screen" rel="stylesheet" type="text/css">
+	</head>
+<body>
+	<div class="container" style="width: 300px">
+		<?php echo Form::open(array('class' => 'form-horizontal', 'role' => 'form', 'method' => 'post', 'url' => URL::route('login'))); ?>
+			<div class="form-group">
+				<?php echo Form::label('username', 'Username', array('class' => 'col-sm-4 control-label')); ?>
+				<div class="col-sm-8">
+					<?php echo Form::text('username', null, array('class' => 'form-control')); ?>
+				</div>
+			</div>
+			<div class="form-group">
+				<?php echo Form::label('password', 'Password', array('class' => 'col-sm-4 control-label')); ?>
+				<div class="col-sm-8">
+					<?php echo Form::password('password', array('class' => 'form-control')); ?>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<?php echo Form::submit('Login', array('name' => 'login', 'class' => 'btn btn-danger')); ?>
+			</div>
+		<?php echo Form::close(); ?>
+	</div>
+</body>
+<!--[if lt IE 9]><script type="text/javascript" src="http://odcvoyage.com/js/html5.js"></script><![endif]-->
+<script type="text/javascript" src="<?php echo asset('/public/libraries/jquery/jquery-2.0.3.min.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo asset('/public/libraries/bootstrap/js/bootstrap.min.js'); ?>"></script>
+<script type="text/javascript">
+  var $app = {
+      'module': "<?php echo $currentMvc['module']; ?>",
+      'controller': "<?php echo $currentMvc['controller']; ?>",
+      'action': "<?php echo $currentMvc['action']; ?>"
+  };
+	var base_url = '<?php echo Request::root(); ?>';
+</script>
+<script type="text/javascript" data-main="<?php echo asset('/public/libraries/admin/main-backbone'); ?>" src="<?php echo asset('/public/libraries/require.js?v=' . time()); ?>"></script>
+</html>

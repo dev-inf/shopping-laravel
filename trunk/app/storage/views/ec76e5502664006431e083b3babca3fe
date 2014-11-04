@@ -1,0 +1,118 @@
+<?php $__env->startSection('content'); ?>
+	<div class="row">
+		<div class="col-sm-12 col-md-10">
+			<ul id="breadcrumbs" class="hidden-xs">
+				<li><a href="index.html">Trang chủ</a></li>
+				<li><a href="" class="current">Xem phim</a></li>
+			</ul>
+			<div class="wrapper dataPlayer" data-id="<?php echo $film['id']; ?>" data-link="<?php echo $film['epFirst']['link']; ?>" data-banner="<?php echo $film['banner']; ?>">
+				<div id="player" class="jwplayer">Phim này không tồn tại hoặc bị lỗi</div>
+			</div>
+			<?php if (isset($film['dataEpDrama'])): ?>
+				<div class="epFilm">
+					<div class="btn-group">
+						<?php if (count($film['dataEpDrama']) > 12): ?>
+							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+								Các tập trước
+								<span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu">
+								<?php echo e($i = 0); ?>
+								<?php foreach ($film['dataEpDrama'] as $itemDED): ?>
+									<?php if ($i < 12): ?>
+										<li><a href="javascript.void(0)" data-id="<?php echo $itemDED['ep_id']; ?>" data-link="<?php echo $itemDED['link']; ?>">Tập <?php echo $itemDED['ep']; ?></a></li>
+									<?php endif; ?>
+									<?php echo e($i++); ?>
+								<?php endforeach; ?>
+							</ul>
+							<?php echo e($i = 0); ?>
+							<?php foreach ($film['dataEpDrama'] as $itemDED): ?>
+								<?php if ($i > 12): ?>
+									<button class="btn btn-default" type="button"><a href="javascript.void(0)" data-id="<?php echo $itemDED['ep_id']; ?>" data-link="<?php echo $itemDED['link']; ?>">Tập <?php echo $itemDED['ep']; ?></a></button>
+								<?php endif; ?>
+								<?php echo e($i++); ?>
+							<?php endforeach; ?>
+						<?php else: ?>
+							<?php foreach ($film['dataEpDrama'] as $itemDED): ?>
+								<button class="btn btn-default" type="button"><a href="javascript.void(0)" data-id="<?php echo $itemDED['ep_id']; ?>" data-link="<?php echo $itemDED['link']; ?>">Tập <?php echo $itemDED['ep']; ?></a></button>
+							<?php endforeach; ?>
+						<?php endif; ?>
+					  </div>
+				</div>
+			<?php endif; ?>
+			<div class="descriptionMain hidden-xs">
+				<div class="page-header">
+					<div class="media">
+						<a class="pull-left" href="play.html">
+							<img class="media-object lazy img-responsive" data-original="<?php echo $film['poster']; ?>" alt="<?php echo $film['en_title']; ?>" width="200" height="290">
+						</a>
+						<div class="media-body">
+							<h4 class="media-heading">Thông tin phim</h4>
+							<p>
+								<b>Tên phim:</b> 
+								<?php if ($film['vn_title'] != ""): ?>
+									<?php echo $film['vn_title']; ?> - 
+								<?php endif; ?>
+								<?php echo $film['en_title']; ?>
+							</p>
+							<?php if ($film['release_date'] != ""): ?>
+								<p><b>Ngày công chiếu:</b> <?php echo $film['release_date']; ?></p>
+							<?php endif; ?>
+							<?php if ($film['imdb_rating'] != ""): ?>
+								<p><b>Điểm IMDB:</b> <a href=""><?php echo $film['imdb_rating']; ?></a></p>
+							<?php endif; ?>
+							<?php foreach ($film['position'] as $keyP => $itemP): ?>
+								<p><b><?php echo $keyP; ?>:</b>
+									<?php 
+										$i = 1;
+										$parameter = ',';
+										$totalItem = count($itemP);
+									?>
+									<?php foreach ($itemP as $itemIP): ?>
+										<?php if ($i == $totalItem): ?>
+											<?php
+												$parameter = '';
+											?>									
+										<?php endif; ?>
+										<a href="<?php echo URL::route('position', array('id' => $itemIP['pos_id'], 'fullname' => $itemIP['fullname_url'], 'cata_url' => $itemIP['cata_url'])); ?>"><?php echo $itemIP['fullname']; ?></a><?php echo $parameter; ?>
+										<?php 
+											$i++;
+										?>	
+									<?php endforeach; ?>
+								</p>
+							<?php endforeach; ?>
+							<?php if ($film['description'] != ""): ?>
+								<p><b>Tóm tắt:</b> <?php echo $film['description']; ?></p>
+							<?php endif; ?>
+						</div>
+						<?php if ($film['id_youtube'] != ""): ?>
+							<a href="./#<?php echo $film['id_youtube']; ?>" class="btn btn-info trailer" id="<?php echo $film['id_youtube']; ?>}" data-title="<?php echo $film['en_title']; ?>" data-toggle="modal" data-target="#myModalTrailer">
+								<span class="glyphicon glyphicon-facetime-video"></span> Trailer
+							</a>
+						<?php endif; ?>
+					</div>
+				</div>
+				<?php if ($film['description'] != ""): ?>
+					<div id="desFilm" class="description">
+						<p><?php echo $film['description']; ?></p>
+					</div>
+				<?php endif; ?>
+			</div>
+		</div>
+		<div class="col-sm-12 col-md-2 col-lg-2 hidden-xs hidden-sm">
+			<button type="button" class="btn btn-primary btn-lg switch">Turn On/Off Light</button>
+			<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
+		</div>
+
+		<div class="col-sm-5 boxCommentFacebook">
+			<div class="page-header">
+				<h1>Tác phẩm <small>Sản phẩm tâm huyết.</small></h1>
+			</div>
+			<div class="fb-comments" data-href="http://example.com/comments" data-numposts="7" data-colorscheme="light"></div>
+		</div>
+		<div class="col-sm-7">
+			<?php echo $__env->make('frontend::block.showFilmOther', ['data' => \Films::getFilmOther($film['id'],$film['cata_id'], 8)], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+		</div>
+	</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('frontend::layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
