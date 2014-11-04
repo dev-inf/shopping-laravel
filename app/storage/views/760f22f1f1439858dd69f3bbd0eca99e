@@ -1,0 +1,41 @@
+<?php if ($filter == 1): ?>
+	<?php $__env->startSection('menuRight'); ?>
+		<?php echo $__env->make('frontend::block.menu-right', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	<?php $__env->stopSection(); ?>
+<?php endif; ?>
+<div class="row">
+	<div class="page-header">
+	  <h1><?php echo $mainTitle; ?> <span id="showFilter"></span> <small><?php echo $subTitle; ?></small></h1>
+	</div>
+	<div id="posterList" class="posterList portfolio">
+		<?php foreach ($data as $item): ?>
+			<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 portfolioItem <?php if ($filter == 1): ?> mix newle <?php endif; ?>" data-my-order="1">
+				<a href="./#<?php echo $item->idYoutube; ?>" class="btn btn-info trailer" id="<?php echo $item->idYoutube; ?>" data-title="<?php echo $item->en_title; ?>" data-toggle="modal" data-target="#myModalTrailer">
+					<span class="glyphicon glyphicon-facetime-video"></span> Trailer
+				</a>
+				<a href="<?php echo $item->url; ?>" class="thumbnail">
+					<img class="lazy img-responsive" data-original="<?php echo $item->poster; ?>" alt="<?php echo $item->en_title; ?>" width="260" height="350">
+					<noscript><img src="<?php echo $item->poster; ?>" width="260" height="350"></noscript>
+					<div class="ribbonWrapper">
+						<div class="ribbon">
+							<div class="container">
+								<div class="base"><span>UPDATE</span></div>
+								<div class="left_corner"></div>
+								<div class="right_corner"></div>
+							</div>
+						</div>
+					</div>
+					<div class="thumbnailHover">
+						<div class="glyphicon glyphicon-play"></div>
+						<div class="item-title">
+							<p><?php echo $item->en_title; ?></p>
+							<hr />
+							<p>Công chiếu: <?php echo $item->releaseDate; ?></p>
+							<p><span class="mostView">Xem: <?php echo $item->view; ?></span><span class="imdbPoint">IMDB: <?php echo $item->imdbPoint; ?></span></p>
+						</div>
+					</div>
+				</a>
+			</div>
+		<?php endforeach; ?>
+	</div>
+</div>

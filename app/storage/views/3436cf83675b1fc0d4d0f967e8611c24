@@ -1,0 +1,7 @@
+<?php $__env->startSection('content'); ?>
+	<?php echo $__env->make('frontend::block.depute', ['mainTitle' => 'Đề Cử', 'subTitle' => 'Tuyển chọn khắc khe', 'data' => \Films::getFilmDepute()], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	<?php echo $__env->make('frontend::block.showFilm', ['filter' => 1, 'mainTitle' => 'Lọc theo', 'subTitle' => 'Sắp xếp thông minh.', 'data' => \Films::getFilm('filter', null, null, 20)], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	<?php echo $__env->make('frontend::block.showFilm', ['filter' => 0, 'mainTitle' => 'Sắp chiếu', 'subTitle' => 'Quả boom hẹn giờ', 'data' => \Films::getFilm('soon', null, null, 12)], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	<?php echo $__env->make('frontend::block.showVideo', ['mainTitle' => 'Video Clip', 'subTitle' => 'Ngắn gọn hài hước.', 'data' => \Films::getVideo(12)], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('frontend::layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

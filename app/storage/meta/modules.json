@@ -1,0 +1,37 @@
+{
+    "shop": {
+        "enabled": true,
+        "provider": "App\\Modules\\Shop\\ShopServiceProvider",
+        "name": "shop",
+        "order": 0,
+        "group": "app\/modules"
+    },
+    "admin": {
+        "enabled": true,
+        "provider": "App\\Modules\\Admin\\AdminServiceProvider",
+        "name": "admin",
+        "order": 0,
+        "group": "app\/modules"
+    },
+    "auth": {
+        "enabled": true,
+        "provider": "App\\Modules\\Auth\\AuthServiceProvider",
+        "name": "auth",
+        "order": 0,
+        "group": "app\/modules"
+    },
+    "maintenance": {
+        "enabled": true,
+        "provider": "App\\Modules\\Maintenance\\MaintenanceServiceProvider",
+        "name": "maintenance",
+        "order": 0,
+        "group": "app\/modules"
+    },
+    "frontend": {
+        "enabled": true,
+        "provider": "App\\Modules\\Frontend\\FrontendServiceProvider",
+        "name": "frontend",
+        "order": 0,
+        "group": "app\/modules"
+    }
+}

@@ -1,0 +1,58 @@
+<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+	<!-- <div id="showLeft" class="navbar-brand"><img src="images/menu.svg" /></div> -->
+	<div id="showLeft">Open</div>
+	<div class="menuWrapperLeft">
+		<h3>Danh Mục</h3>
+		<!-- Navigation -->
+		<div class="block_navigation">
+			<ul class="menu">
+				<li class="item1"><a href="#">Thể loại</a>
+					<ul>
+						<li><a href="catalogue.html">Chiếu Rạp</a></li>
+						<li><a href="catalogue.html">Hành Động</a></li>
+						<li><a href="catalogue.html">Phiêu Lưu</a></li>
+						<li><a href="catalogue.html">Kinh Dị</a></li>
+						<li><a href="catalogue.html">Tình Cảm</a></li>
+						<li><a href="catalogue.html">Hoạt Hình</a></li>
+						<li><a href="catalogue.html">Võ Thuật</a></li>
+						<li><a href="catalogue.html">Hài Hước</a></li>
+						<li><a href="catalogue.html">Tâm Lý</a></li>
+						<li><a href="catalogue.html">Viễn Tưởng</a></li>
+						<li><a href="catalogue.html">Thần Thoại</a></li>
+						<li><a href="catalogue.html">Cổ Trang</a></li>
+						<li><a href="catalogue.html">Truyền Hình</a></li>
+						<li><a href="catalogue.html">Lãng Mạn</a></li>
+						<li><a href="catalogue.html">Hình Sự</a></li>
+						<li><a href="catalogue.html">Chiến Trang</a></li>
+						<li><a href="catalogue.html">Khoa Học</a></li>
+						<li><a href="catalogue.html">Hình Sự</a></li>
+						<li><a href="catalogue.html">Thể Thao</a></li>
+						<li><a href="catalogue.html">Âm Nhạc</a></li>
+						<li><a href="catalogue.html">Gia Đình</a></li>
+					</ul>
+				</li>
+				<li class="item2"><a href="#">Quốc gia</a>
+					<ul>
+						<li><a href="catalogue.html">Việt Nam</a></li>
+						<li><a href="catalogue.html">Trung Quốc</a></li>
+						<li><a href="catalogue.html">Hàn Quốc</a></li>
+						<li><a href="catalogue.html">Đài Loan</a></li>
+						<li><a href="catalogue.html">Hồng Kông</a></li>
+						<li><a href="catalogue.html">Nhật Bản</a></li>
+						<li><a href="catalogue.html">Mỹ</a></li>
+						<li><a href="catalogue.html">Thái Lan</a></li>
+						<li><a href="catalogue.html">Ấn Độ</a></li>
+						<li><a href="catalogue.html">Pháp</a></li>
+					</ul>
+				</li>
+				<li class="item3"><a href="<?php echo URL::route('positionAll', array('url' => 'nha-san-xuat')); ?>">Nhà sản xuất</a></li>
+				<li class="item4"><a href="<?php echo URL::route('positionAll', array('url' => 'dao-dien')); ?>">Đạo diễn</a></li>
+				<li class="item5"><a href="<?php echo URL::route('positionAll', array('url' => 'dien-vien')); ?>">Diễn viên</a></li>
+			</ul>
+		</div>
+		<!-- /Navigation -->
+		<!-- Fanpage Box -->
+		<div class="fb-like-box" data-href="https://www.facebook.com/FacebookDevelopers" data-colorscheme="dark" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false" data-width="270" data-height="300"></div>
+		<!-- /Fanpage Box-->
+	</div>
+</nav>

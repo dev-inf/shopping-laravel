@@ -1,0 +1,51 @@
+<?php
+// echo URL::route('users.show');die;
+Menu::handler('main', array('id' => 'css3aw-menu'))
+		->add(Request::root() . '/admin', '<i class="fa fa-dashboard"></i> Dashboard')
+		->add("#", '<i class="fa fa-users"></i> Member', Menu::items('member')
+			->add(URL::route('gender.show'), '<i class="fa fa-compress"></i> Gender')
+			->add(URL::route('users.show'), '<i class="fa fa-user"></i> Member')
+		)
+		->add("#", '<i class="fa fa-play"></i> Film', Menu::items('film')
+			->add(URL::route('sectionFilm.show'), '<i class="fa fa-tree"></i> Section')
+			->add(URL::route('catalogueFilm.show'), '<i class="fa fa-list-ol"></i> Catalogue')
+			->add(URL::route('filmQuality.show'), '<i class="fa fa-magic"></i> Quality')
+			->add(URL::route('film.showMovie'), '<i class="fa fa-file-movie-o"></i> Movie')
+			->add(URL::route('film.showDrama'), '<i class="fa fa-file-movie-o"></i> Drama')
+			->add(URL::route('filmAccess.show'), '<i class="fa fa-file-movie-o"></i> Access')
+			->add(URL::route('filmSubtitle.show'), '<i class="fa fa-file-text"></i> Subtitle')
+			->add(URL::route('tags.show'), '<i class="fa fa-tag"></i> Tags')
+			->add(URL::route('ribbon.show'), '<i class="fa fa-bookmark"></i> Ribbon')
+		)
+		->add("#", '<i class="fa fa-male"></i> Position', Menu::items('position')
+			->add(URL::route('cataloguePosition.show'), '<i class="fa fa-list-ol"></i> Catalogue')
+			->add(URL::route('position.show'), '<i class="fa fa-male"></i> Position')
+		)
+		->add("#", '<i class="fa fa-play"></i> Video', Menu::items('video')
+			->add(URL::route('catalogueVideo.show'), '<i class="fa fa-list-ol"></i> Catalogue')
+			->add(URL::route('video.show'), '<i class="fa fa-video-camera"></i> Video')
+		)
+		->add(URL::route('language.show'), '<i class="fa fa-language"></i> Language')
+		->add(URL::route('medias.index'), '<i class="fa fa-hdd-o"></i> Media')
+		->add('#', '<i class="fa fa-cogs"></i> Setting', Menu::items('setting')
+			->add(URL::route('roles'), '<i class="fa fa-briefcase"></i> Roles')
+			->add(URL::route('resources'), '<i class="fa fa-building-o"></i> Resources')
+			->add(URL::route('pages.show'), '<i class="fa fa-file"></i> Page')
+			->add(URL::route('configuration.show'), '<i class="fa fa-wrench"></i> Configuration')
+			->add('javascript:void(0)', '<i class="fa fa-crosshairs"></i> Clear all cache', null, array('id'=>'clearAllCache'))
+		)
+		->add('#', '<i class="fa fa-history"></i> Automatic', Menu::items('automatic')
+			->add("javascript:void(0)", '<i class="fa fa-history"></i> Update detail all film', null, array('id'=>'updateDataFilm'))
+//			->add("javascript:void(0)", '<i class="fa fa-history"></i> Update detail all position', null, array('id'=>'updatePosition'))
+		);
+// echo Menu::handler('main')->getItemsAtDepth(2);die;
+$limit = count(Menu::handler('main')->getItemsWithDepth());
+for ($i = 0; $i < 2; $i++) {
+	Menu::handler('main')->getItemsAtDepth($i)->map(function($item) {
+		if ($item->hasChildren()) {
+			$item->addClass('css3aw-has-submenu');
+		}
+	});
+}
+?>
+<?php echo Menu::handler('main')->render(); ?>

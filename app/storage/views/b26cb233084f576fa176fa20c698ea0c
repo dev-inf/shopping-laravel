@@ -1,0 +1,36 @@
+<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+	<!-- <div id="showLeft" class="navbar-brand"><img src="images/menu.svg" /></div> -->
+	<div id="showLeft">Open</div>
+	<div class="menuWrapperLeft">
+		<h3>Danh Mục</h3>
+		<!-- Navigation -->
+		<div class="block_navigation">
+			<ul class="menu">
+				<li class="item1"><a href="#">Thể loại</a>
+					<?php echo $__env->make('frontend::block.list-catalogue', ['data' => \Films::getListCatalogue()], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+				</li>
+<!--				<li class="item2"><a href="#">Quốc gia</a>
+					<ul>
+						<li><a href="catalogue.html">Việt Nam</a></li>
+						<li><a href="catalogue.html">Trung Quốc</a></li>
+						<li><a href="catalogue.html">Hàn Quốc</a></li>
+						<li><a href="catalogue.html">Đài Loan</a></li>
+						<li><a href="catalogue.html">Hồng Kông</a></li>
+						<li><a href="catalogue.html">Nhật Bản</a></li>
+						<li><a href="catalogue.html">Mỹ</a></li>
+						<li><a href="catalogue.html">Thái Lan</a></li>
+						<li><a href="catalogue.html">Ấn Độ</a></li>
+						<li><a href="catalogue.html">Pháp</a></li>
+					</ul>
+				</li>-->
+				<li class="item2"><a href="<?php echo URL::route('positionAll', array('url' => 'nha-san-xuat')); ?>">Nhà sản xuất</a></li>
+				<li class="item3"><a href="<?php echo URL::route('positionAll', array('url' => 'dao-dien')); ?>">Đạo diễn</a></li>
+				<li class="item4"><a href="<?php echo URL::route('positionAll', array('url' => 'dien-vien')); ?>">Diễn viên</a></li>
+			</ul>
+		</div>
+		<!-- /Navigation -->
+		<!-- Fanpage Box -->
+		<div class="fb-like-box" data-href="https://www.facebook.com/FacebookDevelopers" data-colorscheme="dark" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false" data-width="270" data-height="300"></div>
+		<!-- /Fanpage Box-->
+	</div>
+</nav>

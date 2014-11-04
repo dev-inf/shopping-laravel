@@ -1,0 +1,29 @@
+<?php if ($data['idYoutube'] != ""): ?>
+<a href="./#<?php echo $data['idYoutube']; ?>" class="btn btn-info trailer" id="<?php echo $data['idYoutube']; ?>" data-title="<?php echo $data['title']; ?>" data-toggle="modal" data-target="#myModalTrailer">
+	<span class="glyphicon glyphicon-facetime-video"></span> Trailer
+</a>
+<?php endif; ?>
+<a href="<?php echo URL::route('film', array('id' => $data['id'], 'title' => $data['url'])); ?>" class="thumbnail">
+	<img class="lazy img-responsive" data-original="<?php echo $data['poster']; ?>" alt="<?php echo $data['title']; ?>" width="260" height="350">
+	<noscript><img src="<?php echo $data['poster']; ?>" width="260" height="350"></noscript>
+	<?php if ($data['ribbon'] != 0): ?>
+		<div id="ribbonWrapper">
+			<div id="ribbon">
+				<div class="container">
+					<div class="base"><?php echo $data['ribbonDescription']; ?></div>
+					<div class="left_corner"></div>
+					<div class="right_corner"></div>
+				</div>
+			</div>
+		</div>
+	<?php endif; ?>
+	<div class="thumbnailHover">
+		<div class="play-gallery"></div>
+		<div class="item-title">
+			<p><?php echo $data['title']; ?></p>
+			<hr />
+			<p><?php if ($data['releaseDate'] != ""): ?>Công chiếu: <?php echo $data['releaseDate']; ?><?php endif; ?></p>
+			<p><span class="mostView">Xem: <?php echo $data['view']; ?> lần</span><span class="imdbPoint"><?php if ($data['imdbPoint'] != ""): ?>IMDB: <?php echo $data['imdbPoint']; ?><?php endif; ?></span></p>
+		</div>
+	</div>
+</a>

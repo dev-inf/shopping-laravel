@@ -1,0 +1,31 @@
+<?php $__env->startSection('content'); ?>
+	<table class="table table-striped">
+		<tr>
+			<th style="text-align: center"><input type="checkbox"></th>
+			<th>Order</th>
+			<th>Username</th>
+			<th>Email</th>
+			<th>Action</th>
+		</tr>
+		<?php 
+			if($users != null){
+				foreach($users as $user){
+					?>
+		<tr>
+			<td align="center"><input type="checkbox"></td>
+			<td><?php echo e($user->id); ?></td>
+			<td><?php echo e($user->username); ?></td>
+			<td><?php echo e($user->email); ?></td>
+			<td>
+				<a type="button" title="Edit" href="/admin/users/edit/<?php echo $user->id; ?>" class="btn btn-warning btn-sm glyphicon glyphicon-pencil"></a>
+				<a type="button" title="Delete" href="/admin/users/delete/<?php echo $user->id; ?>" class="btn btn-danger btn-sm glyphicon glyphicon-trash"></a>
+			</td>
+		</tr>
+
+					<?php
+				}
+			}
+		?>
+	</table>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin::layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
