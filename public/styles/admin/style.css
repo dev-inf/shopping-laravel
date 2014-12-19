@@ -1,0 +1,656 @@
+/* Global Styles */
+/* ------------------------------- */
+
+body {
+    padding-top: 100px;
+    background-color: #f8f8f8;
+}
+
+@media(min-width:768px) {
+    body {
+        padding-top: 50px;
+    }
+}
+
+/* Buttons */
+
+.divLoading{
+    background-color: rgba(0,0,0,0);
+    border: 5px solid rgba(0,183,229,0.9);
+    opacity: .9;
+    border-top: 5px solid rgba(0,0,0,0);
+    border-left: 5px solid rgba(0,0,0,0);
+    border-radius: 50px;
+    box-shadow: 0 0 35px #2187e7;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    -moz-animation: spin .5s infinite linear;
+    -webkit-animation: spin .5s infinite linear;
+}
+
+@-moz-keyframes spin {
+    0% {
+        -moz-transform: rotate(0deg);
+    }
+
+    100% {
+        -moz-transform: rotate(360deg);
+    };
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    };
+}
+
+/* ------------------------------- */
+
+.btn-outline {
+    color: inherit;
+    background-color: transparent;
+    transition: all .5s;
+}
+
+.btn-primary.btn-outline {
+    color: #428bca;
+}
+
+.btn-success.btn-outline {
+    color: #5cb85c;
+}
+
+.btn-info.btn-outline {
+    color: #5bc0de;
+}
+
+.btn-warning.btn-outline {
+    color: #f0ad4e;
+}
+
+.btn-danger.btn-outline {
+    color: #d9534f;
+}
+
+.btn-primary.btn-outline:hover,
+.btn-success.btn-outline:hover,
+.btn-info.btn-outline:hover,
+.btn-warning.btn-outline:hover,
+.btn-danger.btn-outline:hover {
+    color: #fff;
+}
+
+/* Pages */
+
+/* ------------------------------- */
+
+/* Dashboard Chat */
+
+.chat {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.chat li {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #B3A9A9;
+}
+
+.chat li.left .chat-body {
+    margin-left: 60px;
+}
+
+.chat li.right .chat-body {
+    margin-right: 60px;
+}
+
+.chat li .chat-body p {
+    margin: 0;
+    color: #777777;
+}
+
+.panel .slidedown .glyphicon,
+.chat .glyphicon {
+    margin-right: 5px;
+}
+
+.chat-panel .panel-body {
+    height: 350px;
+    overflow-y: scroll;
+}
+
+/* Login Page */
+
+.login-panel {
+    margin-top: 25%;
+}
+
+/* Flot Chart Containers */
+
+.flot-chart {
+    display: block;
+    height: 400px;
+}
+
+.flot-chart-content {
+    width: 100%;
+    height: 100%;
+}
+
+/* DataTables Overrides */
+
+table.dataTable thead .sorting,
+table.dataTable thead .sorting_asc,
+table.dataTable thead .sorting_desc,
+table.dataTable thead .sorting_asc_disabled,
+table.dataTable thead .sorting_desc_disabled {
+    background: transparent;
+}
+
+table.dataTable thead .sorting_asc:after {
+    content: "\f0de";
+    float: right;
+    font-family: fontawesome;
+}
+
+table.dataTable thead .sorting_desc:after {
+    content: "\f0dd";
+    float: right;
+    font-family: fontawesome;
+}
+
+table.dataTable thead .sorting:after {
+    content: "\f0dc";
+    float: right;
+    font-family: fontawesome;
+    color: rgba(50,50,50,.5);
+}
+
+.table tbody>tr>td
+{
+    vertical-align: middle;
+}
+
+/* Circle Buttons */
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.428571429;
+}
+
+.btn-circle.btn-lg {
+    width: 50px;
+    height: 50px;
+    padding: 10px 16px;
+    border-radius: 25px;
+    font-size: 18px;
+    line-height: 1.33;
+}
+
+.btn-circle.btn-xl {
+    width: 70px;
+    height: 70px;
+    padding: 10px 16px;
+    border-radius: 35px;
+    font-size: 24px;
+    line-height: 1.33;
+}
+
+.show-grid [class^="col-"] {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid #ddd;
+    background-color: #eee !important;
+}
+
+.show-grid {
+    margin: 15px 0;
+}
+
+/* Custom Template */
+.table{
+    float: left;
+}
+
+.panel, .thumbnail{
+    position: relative;
+}
+.thumbnail span.btn-file{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file], .btn-top-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 999px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+.btn-fix-top-right{
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    z-index: 9999;
+}
+
+#filter-form .radio, .checkbox{
+    padding-left: 30px;
+}
+
+.btn-special{
+    position: absolute;
+    top: 3px;
+    right:3px;
+}
+
+/* Top Menu*/
+.navbar-fixed-top{
+	height: 60px;
+	margin-right: 20px;
+	margin-left: 60px;
+}
+
+.navbar-fixed-top ul li{
+	width: auto;
+	line-height: 60px;
+}
+
+.navbar-fixed-top ul li .fa{
+	font-size: 25px;
+	color: #000;
+}
+/* Right Menu */
+#css3aw-social-menu-wrapper {
+    position: absolute !important;
+    top: 0;
+    right: 0;
+    width: 255px !important;
+    border-left: 0px !important;
+    z-index:9999;
+}
+
+#css3aw-social-menu-wrapper ul{
+    margin-top: 0px !important;
+}
+
+#css3aw-social-menu-wrapper ul li{
+    margin-left: 0 !important;
+    background: none !important;
+    overflow: none !important;
+}
+
+#css3aw-social-menu-wrapper .dropdown-menu li:last-child {
+    margin-right: 0;
+}
+
+#css3aw-social-menu-wrapper .dropdown-menu li a {
+    padding: 3px 20px;
+    min-height: 0;
+}
+
+#css3aw-social-menu-wrapper .dropdown-menu li a div {
+    white-space: normal;
+}
+
+#css3aw-social-menu-wrapper .dropdown-messages,
+#css3aw-social-menu-wrapper .dropdown-tasks,
+#css3aw-social-menu-wrapper .dropdown-alerts {
+    width: 310px !important;
+    min-width: 0;
+}
+
+#css3aw-social-menu-wrapper .dropdown-messages {
+    margin-left: 5px;
+}
+
+#css3aw-social-menu-wrapper .dropdown-tasks {
+    margin-left: -59px;
+}
+
+#css3aw-social-menu-wrapper .dropdown-alerts {
+    margin-left: -123px;
+}
+
+#css3aw-social-menu-wrapper .dropdown-user {
+    right: 0;
+    left: auto;
+}
+
+.file-modal .modal-dialog{
+    width: 900px;
+}
+
+.pull-left{
+    text-align: left !important;
+}
+
+span.error{
+    font-size: 11px;
+    font-style: italic;
+    color: red;
+}
+
+.btn{
+    /*margin-left: 10px !important;*/
+}
+
+.modal-content .container{
+    width: 100%;
+}
+
+.modal-content .container .row > div{
+    width: 100%;
+    margin-left: 0;
+}
+
+/* Color Picker */
+.colorpicker {
+	width: 356px;
+	height: 176px;
+	overflow: hidden;
+	position: absolute;
+	background: url(../../images/admin/colorpicker_background.png);
+	font-family: Arial, Helvetica, sans-serif;
+	display: none;
+}
+.colorpicker_color {
+	width: 150px;
+	height: 150px;
+	left: 14px;
+	top: 13px;
+	position: absolute;
+	background: #f00;
+	overflow: hidden;
+	cursor: crosshair;
+}
+.colorpicker_color div {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 150px;
+	height: 150px;
+	background: url(../../images/admin/colorpicker_overlay.png);
+}
+.colorpicker_color div div {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 11px;
+	height: 11px;
+	overflow: hidden;
+	background: url(../../images/admin/colorpicker_select.gif);
+	margin: -5px 0 0 -5px;
+}
+.colorpicker_hue {
+	position: absolute;
+	top: 13px;
+	left: 171px;
+	width: 35px;
+	height: 150px;
+	cursor: n-resize;
+}
+.colorpicker_hue div {
+	position: absolute;
+	width: 35px;
+	height: 9px;
+	overflow: hidden;
+	background: url(../../images/admin/colorpicker_indic.gif) left top;
+	margin: -4px 0 0 0;
+	left: 0px;
+}
+.colorpicker_new_color {
+	position: absolute;
+	width: 60px;
+	height: 30px;
+	left: 213px;
+	top: 13px;
+	background: #f00;
+}
+.colorpicker_current_color {
+	position: absolute;
+	width: 60px;
+	height: 30px;
+	left: 283px;
+	top: 13px;
+	background: #f00;
+}
+.colorpicker input {
+	background-color: transparent;
+	border: 1px solid transparent;
+	position: absolute;
+	font-size: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #898989;
+	top: 4px;
+	right: 11px;
+	text-align: right;
+	margin: 0;
+	padding: 0;
+	height: 11px;
+}
+.colorpicker_hex {
+	position: absolute;
+	width: 72px;
+	height: 22px;
+	background: url(../../images/admin/colorpicker_hex.png) top;
+	left: 212px;
+	top: 142px;
+}
+.colorpicker_hex input {
+	right: 6px;
+}
+.colorpicker_field {
+	height: 22px;
+	width: 62px;
+	background-position: top;
+	position: absolute;
+}
+.colorpicker_field span {
+	position: absolute;
+	width: 12px;
+	height: 22px;
+	overflow: hidden;
+	top: 0;
+	right: 0;
+	cursor: n-resize;
+}
+.colorpicker_rgb_r {
+	background-image: url(../../images/admin/colorpicker_rgb_r.png);
+	top: 52px;
+	left: 212px;
+}
+.colorpicker_rgb_g {
+	background-image: url(../../images/admin/colorpicker_rgb_g.png);
+	top: 82px;
+	left: 212px;
+}
+.colorpicker_rgb_b {
+	background-image: url(../../images/admin/colorpicker_rgb_b.png);
+	top: 112px;
+	left: 212px;
+}
+.colorpicker_hsb_h {
+	background-image: url(../../images/admin/colorpicker_hsb_h.png);
+	top: 52px;
+	left: 282px;
+}
+.colorpicker_hsb_s {
+	background-image: url(../../images/admin/colorpicker_hsb_s.png);
+	top: 82px;
+	left: 282px;
+}
+.colorpicker_hsb_b {
+	background-image: url(../../images/admin/colorpicker_hsb_b.png);
+	top: 112px;
+	left: 282px;
+}
+.colorpicker_submit {
+	position: absolute;
+	width: 22px;
+	height: 22px;
+	background: url(../../images/admin/colorpicker_submit.png) top;
+	left: 322px;
+	top: 142px;
+	overflow: hidden;
+}
+.colorpicker_focus {
+	background-position: center;
+}
+.colorpicker_hex.colorpicker_focus {
+	background-position: bottom;
+}
+.colorpicker_submit.colorpicker_focus {
+	background-position: bottom;
+}
+.colorpicker_slider {
+	background-position: bottom;
+}
+
+/* Ribbon */
+.ribbon {
+	width: 50px;
+	height: 130px;
+	margin: 0;
+	position: relative;
+	overflow: hidden;
+}
+
+.ribbon .inset {
+	width: 200px;
+	height: 55px;
+	position: absolute;
+	top: -50px;
+	left: -10px;
+	z-index: 5;
+	
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	
+	background: rgba(0,0,0,0.3);
+	
+	box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.3);
+	-moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.3);
+	-webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.3);
+}
+
+.ribbon .container {
+	position: relative;
+	width: 50px;
+	height: 100px;
+	overflow: hidden;
+	margin: 0;
+	border-left: 1px solid #631a15;
+	border-right: 1px solid #631a15;
+	padding-left: 0;
+}
+
+.ribbon .base {
+	height: 30px;
+	width: 50px;
+	
+	background: rgb(199,59,60);
+	background: -moz-linear-gradient(top,  rgba(199,59,60,1) 0%, rgba(184,32,31,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(199,59,60,1)), color-stop(100%,rgba(184,32,31,1)));
+	background: -webkit-linear-gradient(top,  rgba(199,59,60,1) 0%,rgba(184,32,31,1) 100%);
+	background: -o-linear-gradient(top,  rgba(199,59,60,1) 0%,rgba(184,32,31,1) 100%);
+	background: -ms-linear-gradient(top,  rgba(199,59,60,1) 0%,rgba(184,32,31,1) 100%);
+	background: linear-gradient(top,  rgba(199,59,60,1) 0%,rgba(184,32,31,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c73b3c', endColorstr='#b8201f',GradientType=0 );
+
+	position: relative;
+	z-index: 2;
+}
+
+.ribbon .base:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	width: 35px;
+	left: 6px;
+	height: 90px;
+	border-left: 1px dashed #631a15;
+	border-right: 1px dashed #631a15;
+}
+
+.ribbon .base:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	width: 35px;
+	left: 7px;
+	height: 90px;
+	border-left: 1px dashed #da5050;
+	border-right: 1px dashed #da5050;
+}
+
+.ribbon span{
+	-webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    writing-mode: lr-tb;
+	color: #CCCCCC;
+	font-weight: bold;
+	position: absolute;
+	top: 30px;
+	left: 0;
+	right: 0;
+	text-align: center;
+}
+
+.ribbon .left_corner {
+	width: 100px;
+	height: 100px;
+	background: #b8201f;
+	position: absolute;
+	bottom: 20px;
+	left: -50px;
+	z-index: 1;
+	
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.ribbon .right_corner {
+	width: 100px;
+	height: 100px;
+	background: #b8201f;
+	position: absolute;
+	bottom: 20px;
+	right: -50px;
+	z-index: 1;
+	
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
