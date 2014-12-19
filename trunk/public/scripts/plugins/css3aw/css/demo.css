@@ -1,0 +1,89 @@
+	body {
+    		background-image: url('../img/bg.jpg');
+    		background-position: left top;
+    		background-repeat: no-repeat;
+    		background-size: cover;
+    		background-attachment: fixed;
+    		font-family: 'Open Sans', sans-serif;
+    	}
+
+    	ul.features {
+		  margin-left: 40px;
+		  height: auto;
+		  overflow: hidden;
+		  margin-bottom: 40px;
+		  list-style-type: none;
+		}
+
+		ul.features li {
+		  padding-left: 20px;
+		  color: #fff;
+		  font-weight: 400;
+		  text-shadow: 0 1px #000;
+		  font-size: 15px;
+		  font-family: 'Open Sans', sans-serif;
+		  line-height: 180%;
+		}
+
+		ul.features li a {
+			text-decoration: none;
+			color: #fa0ed7;
+		}
+
+		ul.features li span {
+			margin-right: 10px;
+		}
+
+		h1.page-title {
+		  font-family: 'Open Sans', sans-serif;
+		  line-height: 150%;
+		  border-bottom: 1px solid rgba(255,255,255,0.5);
+		  font-size: 32px;
+		  margin-top: 40px;
+		  font-weight: 100;
+		  margin-bottom: 40px;
+		  color: #fff;
+		  text-align: center;
+		  overflow: hidden;
+		}
+
+		div.text-container {
+			padding-top: 20px;
+			margin: 0 auto;
+			width: 800px;
+			
+		}
+
+		div.text-container div {
+			margin-top: 60px;
+			background: #000;
+			background: rgba(0,0,0,0.7);
+			box-shadow: 0 0 5px 1px rgba(0,0,0,0.32);
+			border: 1px solid rgba(0,0,0,0.3);
+			width: 100%;
+			height: auto;
+			overflow: hidden;
+			padding: 15px;
+		}
+
+		.hover-switcher {
+			clear: both;
+			height: 10px;
+			width: 100%;
+		}
+
+		span[class^="hover-color-"] {
+			height: 40px;
+			width: 100px;
+			display: block;
+			float: left;
+			margin: 0 11px;
+			box-shadow: 0 0 1px 0 #000;
+		}
+
+		span.hover-color-red {background-color: #DC143C;}
+		span.hover-color-orange {background-color: #ff620a;}
+		span.hover-color-green {background-color: #25d99a;}
+		span.hover-color-pink {background-color: #ff33e7;}
+		span.hover-color-applegreen {background-color: #0eae1a;}
+		span.hover-color-purple {background-color: #8730db;}
