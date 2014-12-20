@@ -54,7 +54,7 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => '116.118.112.25',
+			'host'      => 'localhost',
 			'database'  => 'beta_new_phim',
 			'username'  => 'admin',
 			'password'  => 'Hello2014',
