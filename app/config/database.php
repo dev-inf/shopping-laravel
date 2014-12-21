@@ -55,12 +55,12 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'beta_new_phim',
-			'username'  => 'admin',
-			'password'  => 'Hello2014',
+			'database'  => 'shopping_cart',
+			'username'  => 'root',
+			'password'  => '',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
-			'prefix'    => 'fhd_',
+			'prefix'    => '',
 		),
 
 		'pgsql' => array(
