@@ -68,83 +68,6 @@ Breadcrumbs::register('admin.permissions.roles.showRoles', function($breadcrumbs
 // 	$breadcrumbs->push('Modify Resource', route('modify_resource.post'));
 // });
 
-/* Update | Hà Phan Minh | 2014-06-06 */
-// Film
-Breadcrumbs::register('film', function($breadcrumbs){
-	$breadcrumbs->parent('home');
-	$breadcrumbs->push('Film Manager', '#');
-});
-	// Section Film
-	Breadcrumbs::register('sectionFilm.show', function($breadcrumbs){
-		$breadcrumbs->parent('film');
-		$breadcrumbs->push('List Section of Film', URL::action('App\Modules\Admin\Controllers\SectionFilmController@getShow'));
-	});
-
-	Breadcrumbs::register('sectionFilm.modify', function($breadcrumbs){
-		$breadcrumbs->parent('sectionFilm.show');
-		$breadcrumbs->push('Modify');
-	});
-
-	// Catalogue Film
-	Breadcrumbs::register('catalogueFilm.show', function($breadcrumbs){
-		$breadcrumbs->parent('film');
-		$breadcrumbs->push('List Catalogue of Film', URL::action('App\Modules\Admin\Controllers\CatalogueFilmController@getShow'));
-	});
-
-	Breadcrumbs::register('catalogueFilm.modify', function($breadcrumbs){
-		$breadcrumbs->parent('catalogueFilm.show');
-		$breadcrumbs->push('Modify');
-	});
-
-	// Film
-	Breadcrumbs::register('film.showMovie', function($breadcrumbs){
-		$breadcrumbs->parent('film');
-		$breadcrumbs->push('List Film Movie', URL::action('App\Modules\Admin\Controllers\FilmController@getShowMovie'));
-	});
-
-	Breadcrumbs::register('film.showDrama', function($breadcrumbs){
-		$breadcrumbs->parent('film');
-		$breadcrumbs->push('List Film Drama', URL::action('App\Modules\Admin\Controllers\FilmController@getShowDrama'));
-	});
-
-
-	Breadcrumbs::register('film.modify', function($breadcrumbs){
-		$breadcrumbs->parent('film.'.Session::get('previosMethod'));
-		$breadcrumbs->push('Modify');
-	});
-
-	// Film Ep
-	Breadcrumbs::register('filmEp.show', function($breadcrumbs){
-		$breadcrumbs->parent('film');
-		$breadcrumbs->push('List EP', URL::action('App\Modules\Admin\Controllers\FilmEpController@getShow'));
-	});
-
-	Breadcrumbs::register('filmEp.modify', function($breadcrumbs){
-		$breadcrumbs->parent('filmEp.show');
-		$breadcrumbs->push('Modify');
-	});
-
-	// Film Subtitle
-	Breadcrumbs::register('filmSubtitle.show', function($breadcrumbs){
-		$breadcrumbs->parent('film');
-		$breadcrumbs->push('List Subtitle', URL::action('App\Modules\Admin\Controllers\FilmSubtitleController@getShow'));
-	});
-
-	Breadcrumbs::register('filmSubtitle.modify', function($breadcrumbs){
-		$breadcrumbs->parent('filmSubtitle.show');
-		$breadcrumbs->push('Modify');
-	});
-	
-	// Film Quality
-	Breadcrumbs::register('filmQuality.show', function($breadcrumbs){
-		$breadcrumbs->parent('film');
-		$breadcrumbs->push('List Quality', URL::action('App\Modules\Admin\Controllers\FilmQualityController@getShow'));
-	});
-
-	Breadcrumbs::register('filmQuality.modify', function($breadcrumbs){
-		$breadcrumbs->parent('filmQuality.show');
-		$breadcrumbs->push('Modify');
-	});
 
 //Position
 Breadcrumbs::register('position', function($breadcrumbs){
@@ -173,32 +96,6 @@ Breadcrumbs::register('position', function($breadcrumbs){
 		$breadcrumbs->push('Modify');
 	});
 
-// Video
-Breadcrumbs::register('video', function($breadcrumbs){
-	$breadcrumbs->parent('home');
-	$breadcrumbs->push('Video Manager', '#');
-});
-	// Catalogue Position
-	Breadcrumbs::register('catalogueVideo.show', function($breadcrumbs){
-		$breadcrumbs->parent('video');
-		$breadcrumbs->push('List Catalogue of Video', URL::action('App\Modules\Admin\Controllers\CatalogueVideoController@getShow'));
-	});
-
-	Breadcrumbs::register('catalogueVideo.modify', function($breadcrumbs){
-		$breadcrumbs->parent('catalogueVideo.show');
-		$breadcrumbs->push('Modify');
-	});
-
-	// Position
-	Breadcrumbs::register('video.show', function($breadcrumbs){
-		$breadcrumbs->parent('video');
-		$breadcrumbs->push('List Video', URL::action('App\Modules\Admin\Controllers\VideoController@getShow'));
-	});
-
-	Breadcrumbs::register('video.modify', function($breadcrumbs){
-		$breadcrumbs->parent('video.show');
-		$breadcrumbs->push('Modify');
-	});
 
 // Language
 Breadcrumbs::register('language.show', function($breadcrumbs){
